@@ -1,238 +1,79 @@
-/* ----------------------------- */
-/* Waybar Minimal Dracula Style  */
-/* GTK3-safe CSS (no errors)     */
-/* ----------------------------- */
-
-/* Colors */
-
-@define-color critical #ff5555;
-@define-color warning #f1fa8c;
-@define-color text #f8f8f2;
-@define-color text-alt #6272a4;
-
-@define-color bg rgba(30,30,46,0.5);
-@define-color bg-solid #1e1e2e;
-
-@define-color accent #bd93f9;
-@define-color surface rgba(40,42,54,0.5);
-
-
-/* Global */
+@import "./colors/gruvbox.css";
 
 * {
-    font-family: "JetBrains Mono Nerd Font";
-    font-weight: bold;
-    font-size: 13px;
-    min-height: 0;
-    padding: 0;
-    margin: 0;
+  all: unset;
+  font-family:
+    "Rubik", "JetBrainsMono Nerd Font Propo", "Nerd Sans CJK JP",
+    "Noto Sans CJK KR";
 }
 
-
-/* Waybar window */
-
-window#waybar {
-    background: @bg;
-    color: @text;
-    border-radius: 10px;
-    min-height: 28px;
+tooltip {
+  background-color: @bg1;
+  color: @fg;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 20px;
 }
 
-window#waybar.hidden {
-    opacity: 0.2;
+.modules-center {
+  background-color: @bg1;
+  padding: 2px 8px;
+  border-radius: 99px;
 }
 
-
-/* Module groups */
-
-.modules-left,
-.modules-center,
-.modules-right {
-    background: @surface;
-    border-radius: 16px;
-    margin: 3px;
-    padding-left: 8px;
-    padding-right: 8px;
+#clock {
+  font-weight: 500;
 }
 
-
-/* Workspaces */
+#workspaces {
+  min-width: 100px;
+  font-size: 0.95rem;
+  background-color: @bg2;
+  padding: 2px 4px;
+  margin: 2px 0;
+  border-radius: 99px;
+  font-weight: 700;
+}
 
 #workspaces button {
-    color: @text-alt;
-    padding: 2px 6px;
-    margin: 2px;
-    border-radius: 8px;
-    background: transparent;
+  background-color: @bg3;
+  padding: 0 5px;
+  border-radius: 99px;
+  min-width: 10px;
+  margin: 0 2px;
+  transition: all 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+}
+
+#workspaces button.empty {
+  color: @grey0;
 }
 
 #workspaces button.active {
-    color: @text;
-    background: rgba(189,147,249,0.35);
+  background-color: @green;
+  color: @bg1;
+  min-width: 1.5rem;
+  min-height: 0.8rem;
+  font-weight: 500;
 }
 
-#workspaces button.focused {
-    color: @accent;
+#battery {
+  background-color: @green;
+  margin: 6px 0;
+  padding: 0 8px;
+  border-radius: 99px;
+  font-weight: 500;
+  color: @bg1;
+  letter-spacing: -1px;
 }
 
-#workspaces button.urgent {
-    color: @critical;
+#battery.warning {
+  background-color: @yellow;
 }
 
-#workspaces button:hover {
-    color: @text;
-    background: rgba(98,114,164,0.35);
+#battery.critical {
+  background-color: @red;
 }
 
-
-/* Common modules */
-
-#clock,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#battery,
-#network,
-#pulseaudio,
-#tray,
-#window,
-#bluetooth,
-#backlight {
-    padding: 3px 8px;
-    margin: 2px;
-    border-radius: 8px;
-}
-
-
-/* Window title */
-
-#window {
-    color: @text-alt;
-    font-weight: normal;
-}
-
-
-/* CPU */
-
-#cpu {
-    color: #8be9fd;
-}
-
-
-/* Memory */
-
-#memory {
-    color: #ff79c6;
-}
-
-
-/* Disk */
-
-#disk {
-    color: #50fa7b;
-}
-
-
-/* Temperature */
-
-#temperature {
-    color: #ffb86c;
-}
-
-#temperature.critical {
-    color: @critical;
-}
-
-
-/* Audio */
-
-#pulseaudio {
-    color: #f1fa8c;
-}
-
-#pulseaudio.muted {
-    color: @text-alt;
-}
-
-
-/* Tray */
-
-#tray {
-    padding: 2px 6px;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-}
-
-
-/* Battery animation */
-
-@keyframes blink {
-    to {
-        color: @critical;
-    }
-}
-
-#battery.critical:not(.charging) {
-    color: @critical;
-    animation-name: blink;
-    animation-duration: 0.6s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-
-/* Volume slider */
-
-#pulseaudio-slider slider {
-    min-width: 0;
-    min-height: 0;
-    opacity: 0;
-    border: none;
-    box-shadow: none;
-    background: none;
-}
-
-#pulseaudio-slider trough {
-    min-width: 80px;
-    min-height: 8px;
-    border-radius: 5px;
-    background-color: @bg-solid;
-}
-
-#pulseaudio-slider highlight {
-    min-height: 8px;
-    border-radius: 5px;
-    background-color: @accent;
-}
-
-
-/* Brightness slider */
-
-#backlight-slider slider {
-    min-width: 0;
-    min-height: 0;
-    opacity: 0;
-    border: none;
-    box-shadow: none;
-    background: none;
-}
-
-#backlight-slider trough {
-    min-width: 80px;
-    min-height: 8px;
-    border-radius: 5px;
-    background-color: @bg-solid;
-}
-
-#backlight-slider highlight {
-    min-height: 8px;
-    border-radius: 5px;
-    background-color: @accent;
+#custom-separator {
+  color: @grey0;
 }
