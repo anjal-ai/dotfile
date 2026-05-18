@@ -1,0 +1,201 @@
+{
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "git_panel": {
+    "tree_view": true
+  },
+
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": { "enabled": "always" },
+          "inlayHints": {
+            "parameterNames": { "enabled": "literals" },
+            "variableTypes": { "enabled": true },
+            "functionLikeReturnTypes": { "enabled": true },
+            "enumMemberValues": { "enabled": true }
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": { "enabled": "always" },
+          "inlayHints": {
+            "parameterNames": { "enabled": "literals" }
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+
+  "agent": {
+    "tool_permissions": {
+      "tools": {
+        "create_directory": {
+          "default": "allow",
+          "always_allow": [
+            {
+              "pattern": "^Prop\\-Track\\-Testing/frontend/src/components/"
+            },
+            {
+              "pattern": "^payment_intregration/"
+            }
+          ]
+        },
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
+    "default_model": {
+      "enable_thinking": false,
+      "provider": "copilot_chat",
+      "model": "gemini-3-pro-preview"
+    },
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.6"
+      }
+    ],
+    "model_parameters": []
+  },
+
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "theme": "DevPro Zed",
+
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_branch_name": false,
+    "show_user_menu": false
+  },
+
+  "tab_bar": {
+    "show": true
+  },
+
+  "toolbar": {
+    "quick_actions": false
+  },
+
+  "status_bar": {
+    "experimental.show": true
+  },
+
+  "project_panel": {
+    "hide_hidden": false,
+    "show_diagnostics": "off",
+    "indent_size": 21.0,
+    "folder_icons": false,
+    "dock": "left",
+    "default_width": 260,
+    "hide_root": true,
+    "auto_fold_dirs": false,
+    "starts_open": false,
+    "git_status": false,
+    "sticky_scroll": false,
+    "scrollbar": { "show": "never" },
+    "indent_guides": { "show": "never" }
+  },
+
+  "outline_panel": {
+    "folder_icons": true,
+    "default_width": 260,
+    "indent_guides": { "show": "never" }
+  },
+
+  "file_finder": {
+    "modal_max_width": "large"
+  },
+
+  "scrollbar": {
+    "show": "never"
+  },
+
+  "gutter": {
+    "min_line_number_digits": 0,
+    "folds": false,
+    "runnables": false
+  },
+
+  "indent_guides": {
+    "enabled": true
+  },
+
+  "ui_font_family": "Iosevka",
+  "ui_font_size": 14,
+
+  "buffer_font_family": "Iosevka",
+  "buffer_font_size": 12,
+  "agent_buffer_font_size": 12,
+
+  "vim_mode": false,
+
+  "cursor_shape": "bar",
+  "cursor_blink": false,
+
+  "selection_highlight": false,
+  "current_line_highlight": "none",
+  "show_whitespaces": "none",
+
+  "drag_and_drop_selection": {
+    "enabled": false
+  },
+
+  "seed_search_query_from_cursor": "never",
+
+  "tab_size": 2,
+  "use_tabs": false,
+
+  "auto_indent": true,
+  "auto_indent_on_paste": true,
+
+  "show_completions_on_input": true,
+  "show_completion_documentation": true,
+
+  "inline_code_actions": false,
+  "lsp_document_colors": "none",
+
+  "hover_popover_enabled": true,
+
+  "format_on_save": "on",
+
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+
+  "auto_update": true,
+
+  "extend_comment_on_newline": false,
+
+  "horizontal_scroll_margin": 1,
+  "vertical_scroll_margin": 1,
+
+  "when_closing_with_no_tabs": "keep_window_open",
+
+  "close_on_file_delete": true,
+
+  "restore_on_file_reopen": false,
+
+  "restore_on_startup": "empty_tab",
+
+  "session": {
+    "restore_unsaved_buffers": false
+  },
+
+  "git": {
+    "git_gutter": "hide",
+    "inline_blame": { "enabled": false }
+  },
+
+  "centered_layout": {
+    "right_padding": 0.15,
+    "left_padding": 0.15
+  }
+}

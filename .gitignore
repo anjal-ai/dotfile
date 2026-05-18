@@ -1,0 +1,4 @@
+
+# auth / tokens
+.config/github-copilot/apps.json
+.config/gh/hosts.yml
